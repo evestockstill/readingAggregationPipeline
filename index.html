@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  The Aggregation Framework is analytic tools in mongoDB allowing you to run various reports or analysis on one or more collections.
+  Aggregation modes include 1. aggregation pipeline 2. map-reduce 3. single purpose aggregation operations
+  The pipeline gets passed down through the collection and put into different stages do produce the output. stage operators have different functions. $match can find the specifics of what you want to match. so saying you want the data from a certain year you would write { $match: { founded_year: 2015 }}  $sort gives you a specific order of how you want your data displayed like -1 would give you alphabetically starting a z 
+  for our last lab the syntax would be db.recipes.aggregate([ { $match: { founded_year: 2015 }}])
+  most common stage operators are <ul>
+    <li>$group</li>
+    <li>$project</li>
+    <li>$match</li>
+    <li>$limit</li>
+    <li>$skip</li>
+    <li>$unwind</li>
+    <li>$sort</li>
+    You can use a match operaetors to include regex queries for finding values such as pricing by including greater than, less than, greater than or equal, less than or equal, and in (which includes if is in the list) example is.. queryString = queryString.replace(/\b(gt|gte|lt|lte|in)\b/g, match => `$${match}`);
+  </ul>
+</body>
+</html>
